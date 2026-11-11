@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 880" width="1400" height="880" role="img" aria-label="Function hierarchy">
+  <defs>
+    <filter id="sh" x="-10%" y="-10%" width="120%" height="130%"><feDropShadow dx="0" dy="4" stdDeviation="5" flood-color="#0f172a" flood-opacity="0.18"/></filter>
+    <style>
+      text { font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
+      .flow { stroke-dasharray: 9 7; animation: dash 1.2s linear infinite; }
+      @keyframes dash { to { stroke-dashoffset: -32; } }
+    </style>
+  </defs>
+  <rect width="1400" height="880" rx="24" fill="#f8fafc"/>
+  <text x="700" y="56" text-anchor="middle" font-size="34" font-weight="800" fill="#0f172a">Program / Function Hierarchy</text>
+
+  <!-- main -->
+  <g filter="url(#sh)"><rect x="560" y="90" width="280" height="64" rx="14" fill="#0f766e"/>
+  <text x="700" y="130" text-anchor="middle" font-size="24" font-weight="700" fill="#fff">main()</text></g>
+  <path d="M700 154 V190" stroke="#0f766e" stroke-width="3" class="flow" fill="none"/>
+  <g filter="url(#sh)"><rect x="560" y="190" width="280" height="64" rx="14" fill="#134e4a"/>
+  <text x="700" y="230" text-anchor="middle" font-size="22" font-weight="700" fill="#fff">show_menu()  →  choice</text></g>
+  <path d="M700 254 V290 M110 290 H1290 M110 290 V330 M310 290 V330 M510 290 V330 M710 290 V330 M910 290 V330 M1110 290 V330 M1290 290 V330" stroke="#0f766e" stroke-width="3" class="flow" fill="none"/>
+
+  <g font-size="19" font-weight="700" fill="#fff" text-anchor="middle">
+    <g filter="url(#sh)"><rect x="20" y="330" width="180" height="76" rx="12" fill="#15803d"/><text x="110" y="358">1</text><text x="110" y="386" font-size="17">add_product()</text></g>
+    <g filter="url(#sh)"><rect x="220" y="330" width="180" height="76" rx="12" fill="#15803d"/><text x="310" y="358">2</text><text x="310" y="386" font-size="16">view_all_products()</text></g>
+    <g filter="url(#sh)"><rect x="420" y="330" width="180" height="76" rx="12" fill="#15803d"/><text x="510" y="358">3</text><text x="510" y="386" font-size="17">search_product()</text></g>
+    <g filter="url(#sh)"><rect x="620" y="330" width="180" height="76" rx="12" fill="#15803d"/><text x="710" y="358">4</text><text x="710" y="386" font-size="17">update_stock()</text></g>
+    <g filter="url(#sh)"><rect x="820" y="330" width="180" height="76" rx="12" fill="#1d4ed8"/><text x="910" y="358">5</text><text x="910" y="386" font-size="17">process_sale()</text></g>
+    <g filter="url(#sh)"><rect x="1020" y="330" width="180" height="76" rx="12" fill="#1d4ed8"/><text x="1110" y="358">6</text><text x="1110" y="386" font-size="15">view_sales_records()</text></g>
+    <g filter="url(#sh)"><rect x="1220" y="330" width="170" height="76" rx="12" fill="#7c3aed"/><text x="1305" y="358">7</text><text x="1305" y="386" font-size="16">generate_report()</text></g>
+  </g>
+
+  <!-- helpers -->
+  <text x="700" y="480" text-anchor="middle" font-size="24" font-weight="700" fill="#0f172a">Helper functions used by the options above</text>
+  <g font-size="19" text-anchor="middle">
+    <g filter="url(#sh)"><rect x="40" y="520" width="300" height="120" rx="14" fill="#fff" stroke="#b45309" stroke-width="3"/>
+      <text x="190" y="556" font-weight="800" fill="#b45309">read_text(prompt)</text>
+      <text x="190" y="586" fill="#475569" font-size="16">non-empty text</text>
+      <text x="190" y="612" fill="#475569" font-size="16">used by: 1, 3</text></g>
+    <g filter="url(#sh)"><rect x="370" y="520" width="300" height="120" rx="14" fill="#fff" stroke="#b45309" stroke-width="3"/>
+      <text x="520" y="556" font-weight="800" fill="#b45309">read_int(prompt, minimum)</text>
+      <text x="520" y="586" fill="#475569" font-size="16">whole number ≥ minimum</text>
+      <text x="520" y="612" fill="#475569" font-size="16">used by: 1, 4, 5</text></g>
+    <g filter="url(#sh)"><rect x="700" y="520" width="300" height="120" rx="14" fill="#fff" stroke="#b45309" stroke-width="3"/>
+      <text x="850" y="556" font-weight="800" fill="#b45309">read_price(prompt)</text>
+      <text x="850" y="586" fill="#475569" font-size="16">number greater than 0</text>
+      <text x="850" y="612" fill="#475569" font-size="16">used by: 1</text></g>
+    <g filter="url(#sh)"><rect x="1030" y="520" width="330" height="120" rx="14" fill="#fff" stroke="#0f766e" stroke-width="3"/>
+      <text x="1195" y="556" font-weight="800" fill="#0f766e">find_product_by_id(id)</text>
+      <text x="1195" y="586" fill="#475569" font-size="16">returns product dict or None</text>
+      <text x="1195" y="612" fill="#475569" font-size="16">used by: 1, 4, 5</text></g>
+    <g filter="url(#sh)"><rect x="205" y="670" width="400" height="110" rx="14" fill="#fff" stroke="#0f766e" stroke-width="3"/>
+      <text x="405" y="706" font-weight="800" fill="#0f766e">print_product_details(product)</text>
+      <text x="405" y="736" fill="#475569" font-size="16">prints all fields of one product</text>
+      <text x="405" y="760" fill="#475569" font-size="16">used by: 3</text></g>
+    <g filter="url(#sh)"><rect x="795" y="670" width="400" height="110" rx="14" fill="#fff" stroke="#0f766e" stroke-width="3"/>
+      <text x="995" y="706" font-weight="800" fill="#0f766e">print_products_with_price(label, price)</text>
+      <text x="995" y="736" fill="#475569" font-size="16">prints highest / lowest priced items</text>
+      <text x="995" y="760" fill="#475569" font-size="16">used by: 7</text></g>
+  </g>
+  <text x="700" y="838" text-anchor="middle" font-size="17" fill="#64748b">Option 8 (Exit) ends the loop inside main().</text>
+</svg>
